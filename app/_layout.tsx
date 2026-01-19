@@ -1,5 +1,12 @@
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router';
+import { MenuProvider } from '../lib/context/MenuContext';
+import { StatusBar } from 'expo-status-bar';
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <MenuProvider>
+      <StatusBar style="light" />
+      <Stack screenOptions={{ headerShown: false }} />
+    </MenuProvider>
+  );
 }
