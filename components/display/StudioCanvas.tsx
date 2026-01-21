@@ -9,24 +9,23 @@ export default function StudioCanvas({ children }: { children: React.ReactNode }
       <Canvas
         shadows
         camera={{ position: [0, 0, 4], fov: 45 }}
+        gl={{ 
+          antialias: true,
+          toneMappingExposure: 1.2 // Aumenta ligeramente el brillo global
+        }}
       >
-        <ambientLight intensity={0.5} />
-        <spotLight position={[5, 5, 5]} intensity={1} />
+        <ambientLight intensity={0.7} /> 
+        <spotLight position={[10, 10, 10]} intensity={1.5} penumbra={1} castShadow />
+        <pointLight position={[-10, -10, -10]} color="#D4AF37" intensity={0.8} />
         
-        {/* OrbitControls permite la rotación con el dedo */}
-        <OrbitControls 
-          enableZoom={false} 
-          enablePan={false}
-          minPolarAngle={Math.PI / 3}
-          maxPolarAngle={Math.PI / 1.5}
-        />
+        <OrbitControls enableZoom={false} enablePan={false} />
         
         <Suspense fallback={null}>
-          <Float speed={1.2} rotationIntensity={0.2} floatIntensity={0.3}>
+          <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.4}>
             {children}
           </Float>
-          <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={5} blur={2.5} />
-          <Environment preset="city" />
+          <ContactShadows position={[0, -1.8, 0]} opacity={0.5} scale={10} blur={2} far={2.5} />
+          <Environment preset="apartment" /> 
         </Suspense>
       </Canvas>
     </View>
