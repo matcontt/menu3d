@@ -20,6 +20,7 @@ export interface MenuItem {
     temp: string;
   };
   modelPath: any;
+  scale: number;
 }
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -30,6 +31,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$28.00',
     specs: { weight: '450g', calories: '620 kcal', temp: '85°C' },
     // Ajustamos la ruta según tu estructura de assets
+    scale: 10,
     modelPath: require('../../assets/models/Ramen-GLB.gltf'),
   },
   {
@@ -38,6 +40,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Manzana Fuji seleccionada, para todos esos deportistas que quieren comer una buena manzana.',
     price: '$15.00',
     specs: { weight: '200g', calories: '180 kcal', temp: '12°C' },
+    scale: 0.11,
     modelPath: require('../../assets/models/AppleIcon.glb'),
   },
   {
@@ -46,6 +49,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Bizcocho de cacao premium con capas de mousse de chocolate 70% y frutos del bosque.',
     price: '$22.50',
     specs: { weight: '180g', calories: '410 kcal', temp: '18°C' },
+    scale: 1.5,
     modelPath: require('../../assets/models/Cake.glb'),
   },
 ];
