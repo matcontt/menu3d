@@ -78,3 +78,9 @@ Sombras: ContactShadows dinámicas para realismo físico.
 
 🖋️ Notas de Desarrollo
 Este proyecto fue diseñado bajo el principio de separación de intereses. Cada modelo 3D tiene parámetros independientes de scale y positionY definidos en lib/constants/menuData.ts para garantizar que, independientemente del tamaño original del archivo, la visualización en el dispositivo móvil sea siempre impecable.
+
+# Video
+
+
+https://github.com/user-attachments/assets/7824a626-fce5-4ebe-8f22-737fca97b41e
+
