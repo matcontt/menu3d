@@ -1,14 +1,3 @@
-import { Platform } from 'react-native';
-
-export const COLORS = {
-  background: '#050505',     // Negro profundo
-  surface: '#121212',        // Gris muy oscuro para tarjetas
-  accent: '#D4AF37',         // Oro (High Class)
-  textPrimary: '#F2F2F2',    // Blanco hueso
-  textSecondary: '#8E8E93',  // Gris para especificaciones
-  priceTag: '#E5E5E5',
-};
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -19,19 +8,27 @@ export interface MenuItem {
     calories: string;
     temp: string;
   };
-  modelPath: any;
   scale: number;
+  positionY: number;
+  modelPath: any;
 }
+
+export const COLORS = {
+  background: '#050505',
+  accent: '#D4AF37',
+  textPrimary: '#F2F2F2',
+  textSecondary: '#8E8E93',
+};
 
 export const MENU_ITEMS: MenuItem[] = [
   {
     id: '1',
     name: 'KYOTO SHOYU RAMEN',
-    description: 'Fideos artesanales en caldo de soja fermentada 48h, con láminas de cerdo ibérico y huevo marinado.',
+    description: 'Fideos artesanales en caldo de soja fermentada 48h, con láminas de cerdo ibérico.',
     price: '$28.00',
     specs: { weight: '450g', calories: '620 kcal', temp: '85°C' },
-    // Ajustamos la ruta según tu estructura de assets
     scale: 10,
+    positionY: 0.8, 
     modelPath: require('../../assets/models/Ramen-GLB.gltf'),
   },
   {
@@ -41,6 +38,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$15.00',
     specs: { weight: '200g', calories: '180 kcal', temp: '12°C' },
     scale: 0.11,
+    positionY: 0.7, // Más arriba para evitar el texto
     modelPath: require('../../assets/models/AppleIcon.glb'),
   },
   {
@@ -50,6 +48,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$22.50',
     specs: { weight: '180g', calories: '410 kcal', temp: '18°C' },
     scale: 1.5,
+    positionY: 0.2,
     modelPath: require('../../assets/models/Cake.glb'),
   },
 ];
