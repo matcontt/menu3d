@@ -7,6 +7,7 @@ import { COLORS } from '../lib/constants/menuData';
 import StudioCanvas from '../components/display/StudioCanvas';
 import FoodModel from '../components/models/FoodModel';
 import ProductInfo from '../components/ui/ProductInfo';
+import FoodSelector from '../components/ui/FoodSelector';
 
 export default function MainMenu() {
   const { selectedItem } = useMenu();
@@ -26,6 +27,7 @@ export default function MainMenu() {
       {/* 2. Capa de Interfaz de Usuario */}
       <SafeAreaView style={styles.uiContainer}>
         <View style={styles.spacer} />
+        <FoodSelector />
         <ProductInfo />
       </SafeAreaView>
     </View>
